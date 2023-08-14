@@ -1,0 +1,32 @@
+{
+  "name": "jugger-alert",
+  "version": "1.0.0",
+  "description": "A react native customizable alert",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidon4/jugger-alert.git"
+  },
+  "keywords": [
+    "expo",
+    "react-native",
+    "alert"
+  ],
+  "author": "JUGGERNAUT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davidon4/jugger-alert/issues"
+  },
+  "homepage": "https://github.com/Davidon4/jugger-alert#readme",
+  "dependencies": {
+    "expo": "^49.0.7",
+    "expo-font": "~11.4.0",
+    "expo-status-bar": "^1.6.0",
+    "react": "^18.2.0",
+    "react-native": "^0.72.3",
+    "react-native-web": "^0.19.7"
+  }
+}
