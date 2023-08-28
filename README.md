@@ -7,13 +7,6 @@ Jugger Alert is a customizable and reusable modal component for React Native Exp
 
 [![Video Thumbnail](assets/thumbnail.jpg)](assets/juggerVideo.mov)
 
-
-<!-- <video width="320" height="240" controls>
-    <source src="assets/juggerVideo.mov" type="video/quicktime">
-    Your browser does not support the video tag.
-</video> -->
-
-
 ---
 <!-- TABLE OF CONTENTS -->
 <details>
