@@ -1,4 +1,4 @@
-## Jugger Alert - React Native Expo Package
+## Jugger Alert - React Native Package
 
 Jugger Alert is a customizable and reusable modal component for React Native Expo applications. It provides an easy way to display alerts and confirmation dialogs with various customization options.
 
