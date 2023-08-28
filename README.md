@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
 ---
 
 ## Contribution
-If you would like to create a contribution section on your project, check out the README.md file for an example on how to contribute. Provide information on how to contribute to your project in this section 
+If you're interested in enhancing the library by creating additional features, feel free to create an issue and outline the specific improvements you have in mind.
 
 ---
 ## License
