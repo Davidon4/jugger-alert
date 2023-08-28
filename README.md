@@ -3,6 +3,15 @@
 Jugger Alert is a customizable and reusable modal component for React Native Expo applications. It provides an easy way to display alerts and confirmation dialogs with various customization options.
 
 ---
+### Project Demo Video
+
+<video width="320" height="240" controls>
+    <source src="assets/juggerVideo.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+</video>
+
+
+---
 <!-- TABLE OF CONTENTS -->
 <details>
    <summary>Table of Contents</summary>
