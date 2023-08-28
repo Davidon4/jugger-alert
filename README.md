@@ -15,7 +15,7 @@ Jugger Alert is a customizable and reusable modal component for React Native Exp
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contribution</a></li>
+    <li><a href="#improvement">Improvement</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgments">Author Info</a></li>
   </ol>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
 
 ---
 
-## Contribution
+## Improvement
 If you're interested in enhancing the library by creating additional features, feel free to create an issue and outline the specific improvements you have in mind.
 
 ---
@@ -148,4 +148,4 @@ Licensed under the [MIT](https://github.com/Davidon4/jugger-alert/blob/main/LICE
 
 ## Author Info
 
-[![Readme style](https://img.shields.io/badge/Author-github_username-color_of_your_choice)](https://github.com/github_username)
+[![Readme style](https://img.shields.io/badge/Author-Juggernaut.dev-blueviolet)](https://github.com/Davidon4)
