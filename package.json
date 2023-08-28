@@ -1,6 +1,6 @@
 {
   "name": "jugger-alert",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react native customizable alert",
   "main": "index.js",
   "scripts": {
