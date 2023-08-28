@@ -97,11 +97,13 @@ export default function App() {
         message="You are about to book a ride, please confirm your choice."
         juggerColor="blue"
       />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => setModalVisible(true)}>
+          <Text style={styles.textStyle}>Show Modal</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -110,7 +112,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',     
+  },
+  buttonContainer: {
+    flex: 1,                  
+    justifyContent: 'center', 
+    alignItems: 'center',     
   },
   button: {
     borderWidth: 1,
@@ -118,8 +125,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     height: height / 18,
     width: width / 3,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textStyle: {
+    color: 'white',
   },
 });
    ```

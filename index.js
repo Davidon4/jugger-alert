@@ -34,7 +34,7 @@ export default function JuggerAlert (props) {
   return (
     <View style={{flex: 1, alignItems: "center", justifyContent: 'center'}}>
         <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={true}
         visible={alertVisible}
         onRequestClose={() => {
