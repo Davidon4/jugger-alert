@@ -10,7 +10,7 @@ Jugger Alert is a customizable and reusable modal component for React Native Exp
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#key-features">Key Features</a></li>
         <li><a href="#props">Props</a></li>
       </ul>
     </li>
@@ -37,33 +37,35 @@ yarn add jugger-alert
 
 ---
 
-### Prerequisites
+## Key Features
 
-    Modularity: Jugger Alert provides a standalone and reusable modal component, enabling you to effortlessly incorporate alerts throughout your application.
+- **Modularity:** Jugger Alert provides a standalone and reusable modal component, enabling you to effortlessly incorporate alerts throughout your application.
 
-    Customization: Customize the appearance and behavior of the modal to match your app's design and user experience requirements.
+- **Customization:** Customize the appearance and behavior of the modal to match your app's design and user experience requirements.
 
-    Icon Variety: Choose from different icon options including a question mark, checkmark, thumbs-up, and a "sorry" symbol to suit the context of the alert.
+- **Icon Variety:** Choose from different icon options including a question mark, checkmark, thumbs-up, and a "sorry" symbol to suit the context of the alert.
 
-    Responsive Design: Jugger Alert is designed to work seamlessly on various screen sizes and orientations.
+- **Responsive Design:** Jugger Alert is designed to work seamlessly on various screen sizes and orientations.
 
-    User Interaction: Users can confirm or cancel actions with the provided buttons, helping prevent accidental actions.
+- **User Interaction:** Users can confirm or cancel actions with the provided buttons, helping prevent accidental actions.
 
-    Easy Integration: Integrate Jugger Alert into your app's flow by simply toggling the modal's visibility and handling the continue action.
+- **Easy Integration:** Integrate Jugger Alert into your app's flow by simply toggling the modal's visibility and handling the continue action.
+
 
 ---
 
 ## Props
-| Property          | Type     | Description                            |
-|-------------------|----------|----------------------------------------|
-| `alertVisible`    | boolean  | Determines if the modal is visible.    |
-| `setAlertVisible` | function | Control the visibility of the modal.   |
-| `onContinue`      | function | Callback when "Continue" is pressed.   |
-| `title`           | string   | The title of the modal.                |
-| `message`         | string   | The message displayed in the modal.    |
-| `juggerColor`     | string   | Background color of the modal.         |
-| `firstButton`     | string   | Label for the first button.            |
-| `secondButton`    | string   | Label for the second button.           |
+| Property          | Type     | Description                            | Default Value       |
+|-------------------|----------|----------------------------------------|---------------------|
+| `alertVisible`    | boolean  | Determines if the modal is visible.    | `false`             |
+| `setAlertVisible` | function | Control the visibility of the modal.   |                     |
+| `onContinue`      | function | Callback when "Continue" is pressed.   |                     |
+| `title`           | string   | The title of the modal.                |    |
+| `message`         | string   | The message displayed in the modal.    |                     |
+| `juggerColor`     | string   | Background color of the modal.         | `"blue"`            |
+| `firstButton`     | string   | Label for the first button.            | `"Cancel"`          |
+| `secondButton`    | string   | Label for the second button.           | `"Continue"`        |
+
 
 ---
 
@@ -129,6 +131,8 @@ If you would like to create a contribution section on your project, check out th
 
 ---
 ## License
+
+Licensed under the [MIT](https://github.com/Davidon4/jugger-alert/blob/main/LICENSE).
 
 ---
 
