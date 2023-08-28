@@ -5,10 +5,13 @@ Jugger Alert is a customizable and reusable modal component for React Native Exp
 ---
 ### Project Demo Video
 
-<video width="320" height="240" controls>
+[![Video Thumbnail](assets/thumbnail.jpg)](assets/juggerVideo.mov)
+
+
+<!-- <video width="320" height="240" controls>
     <source src="assets/juggerVideo.mov" type="video/quicktime">
     Your browser does not support the video tag.
-</video>
+</video> -->
 
 
 ---
@@ -102,8 +105,8 @@ export default function App() {
         setAlertVisible={setModalVisible} 
         onContinue={handleContinue}
         question
-        title="Are you sure?"
-        message="You are about to book a ride, please confirm your choice."
+        title="Please confirm"
+        message="Are you sure you want to logout?"
         juggerColor="blue"
       />
       <View style={styles.buttonContainer}>
