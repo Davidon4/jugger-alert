@@ -1,28 +1,24 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Modal } from 'react-native';
 import * as Font from "expo-font";
 
 import { createIconSetFromIcoMoon } from "@expo/vector-icons";
-import icoMoonConfig from "../selection.json";
+import icoMoonConfig from "./selection.json";
 const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 const { width, height } = Dimensions.get('window');
 
-export default function AlertStyle (props) {
-    const {checkmark, question, sorry,  title, message, buttonSection1, buttonSection2} = props;
+export default function JuggerAlert (props) {
+    const {checkmark, question, sorry, title, message, juggerColor, firstButton, secondButton, alertVisible, setAlertVisible, onContinue} = props;
     const [fontLoaded, setFontLoaded] = useState(false);
 
     const iconName = checkmark ? "checkmark" : question ? "question" : sorry ? "sorry" : "thumbs-o-up";
-
-    // const AlertStyle = {
-    //     name: iconName,
-    // }
 
     useEffect(() => {
         const loadFonts = async () => {
           try {
             await Font.loadAsync({
-              'icomoon': require("../assets/fonts/icomoon.ttf"),
+              'icomoon': require("./assets/fonts/icomoon.ttf"),
             });
             setFontLoaded(true);
           } catch (error) {
@@ -36,8 +32,18 @@ export default function AlertStyle (props) {
         return null;
       }
   return (
-    <View style={styles.container}>
-        <View style={styles.iconContainer}>
+    <View style={{flex: 1, alignItems: "center", justifyContent: 'center'}}>
+        <Modal
+        animationType="slide"
+        transparent={true}
+        visible={alertVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setAlertVisible(!alertVisible);
+        }}>
+          <View style={styles.centeredView}>
+        <View style={styles.fullContainer}>
+        <View style={[styles.iconContainer, {backgroundColor: juggerColor}]}>
       <Icon name={iconName} size={60} color="white" />
       </View>
       <View style={styles.textSection}>
@@ -49,23 +55,28 @@ export default function AlertStyle (props) {
       <View style={styles.buttonContainer}>
       <TouchableOpacity
         style={[styles.button, {borderBottomLeftRadius:30, backgroundColor: '#fff' }]}
-        onPress={() => console.log('Cancel Button pressed')}
+        onPress={() => setAlertVisible(!alertVisible)}
       >
-        <Text style={[styles.buttonText, {color: 'black'}]}>{buttonSection1}</Text>
+        <Text style={[styles.buttonText, {color: 'black'}]}>{firstButton ? firstButton : "Cancel"}</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        style={[styles.button, {borderBottomRightRadius:30}]}
-        onPress={() => console.log('Continue Button pressed')}
-      >
-        <Text style={styles.buttonText}>{buttonSection2}</Text>
+            style={[styles.button, { borderBottomRightRadius: 30, backgroundColor: juggerColor }]}
+            onPress={() => {
+              setAlertVisible(false); // Close the modal
+              onContinue(); // Trigger the continue action
+            }}>
+        <Text style={styles.buttonText}>{secondButton ? secondButton : "Continue"}</Text>
         </TouchableOpacity>
       </View>
+      </View>
+      </View>
+      </Modal>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  fullContainer: {
     backgroundColor: '#fff',
     alignItems: 'center',
     flexDirection: 'column',
@@ -76,8 +87,13 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     shadowOpacity: 0.5
   },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
   iconContainer:{
-    backgroundColor: 'blue',
     borderRadius: 100,
     height: height / 11,
     width: width / 5,
@@ -109,7 +125,6 @@ const styles = StyleSheet.create({
     button:{
         borderWidth: 1,
         borderColor: 'gray',
-        backgroundColor: 'blue',
         height: height / 18,
         width: width / 3,
         justifyContent: "center",
