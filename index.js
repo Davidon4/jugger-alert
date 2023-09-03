@@ -9,7 +9,7 @@ const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 const { width, height } = Dimensions.get('window');
 
 export default function JuggerAlert (props) {
-    const {checkmark, question, sorry, title, message, juggerColor, firstButton, secondButton, alertVisible, setAlertVisible, onContinue} = props;
+    const {checkmark, question, sorry, title, message, juggerColor, firstButton, secondButton, alertVisible, setAlertVisible, titleStyle, messageStyle, onContinue} = props;
     const [fontLoaded, setFontLoaded] = useState(false);
 
     const iconName = checkmark ? "checkmark" : question ? "question" : sorry ? "sorry" : "thumbs-o-up";
@@ -22,13 +22,12 @@ export default function JuggerAlert (props) {
             });
             setFontLoaded(true);
           } catch (error) {
-            console.log("Error loading fonts: ", error);
+            return null
           }
         };
         loadFonts();
       }, []);
       if (!fontLoaded) {
-        console.log("Fonts are still loading...");
         return null;
       }
   return (
@@ -47,9 +46,9 @@ export default function JuggerAlert (props) {
       <Icon name={iconName} size={60} color="white" />
       </View>
       <View style={styles.textSection}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title, titleStyle]}>{title}</Text>
         <View style={styles.messageContainer}>
-        <Text style={styles.message}>{message}</Text>
+        <Text style={[styles.message, messageStyle]}>{message}</Text>
         </View>
       </View>
       <View style={styles.buttonContainer}>
