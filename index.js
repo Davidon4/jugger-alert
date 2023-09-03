@@ -17,7 +17,7 @@ export default function JuggerAlert (props) {
     const iconName = checkmark ? "checkmark" : question ? "question" : sorry ? "sorry" : "thumbs-o-up";
 
     const [fontsLoaded] = useFonts({
-      'Inter-Black': require('./assets/fonts/icomoon.ttf'),
+      'icomoon': require('./assets/fonts/icomoon.ttf'),
     });
   
     const onLayoutRootView = useCallback(async () => {
