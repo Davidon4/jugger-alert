@@ -65,11 +65,13 @@ yarn add jugger-alert
 | `alertVisible`    | boolean  | Determines if the modal is visible.    | `false`             |
 | `setAlertVisible` | function | Control the visibility of the modal.   |                     |
 | `onContinue`      | function | Callback when "Continue" is pressed.   |                     |
-| `title`           | string   | The title of the modal.                |    |
+| `title`           | string   | The title of the modal.                |                     |
 | `message`         | string   | The message displayed in the modal.    |                     |
 | `juggerColor`     | string   | Background color of the modal.         | `"blue"`            |
 | `firstButton`     | string   | Label for the first button.            | `"Cancel"`          |
 | `secondButton`    | string   | Label for the second button.           | `"Continue"`        |
+| `titleStyle`      | string   | Styling for the title.                 | `"Style"`           |
+| `messageStyle`    | string   | Styling for the message.               | `"Style"`           |
 
 
 ---
