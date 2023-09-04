@@ -1,53 +1,37 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Modal } from 'react-native';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
+import * as Font from "expo-font";
+
 import { createIconSetFromIcoMoon } from "@expo/vector-icons";
 import icoMoonConfig from "./selection.json";
-
-SplashScreen.preventAutoHideAsync();
 const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
 const { width, height } = Dimensions.get('window');
 
 export default function JuggerAlert (props) {
     const {checkmark, question, sorry, title, message, juggerColor, firstButton, secondButton, alertVisible, setAlertVisible, titleStyle, messageStyle, onContinue} = props;
-    // const [fontLoaded, setFontLoaded] = useState(false);
+    const [fontLoaded, setFontLoaded] = useState(false);
 
     const iconName = checkmark ? "checkmark" : question ? "question" : sorry ? "sorry" : "thumbs-o-up";
 
-    const [fontsLoaded] = useFonts({
-      'icomoon': require('./assets/fonts/icomoon.ttf'),
-    });
-  
-    const onLayoutRootView = useCallback(async () => {
-      if (fontsLoaded) {
-        await SplashScreen.hideAsync();
+    useEffect(() => {
+        const loadFonts = async () => {
+          try {
+            await Font.loadAsync({
+              'icomoon': require("./assets/fonts/icomoon.ttf"),
+            });
+            setFontLoaded(true);
+          } catch (error) {
+            return null
+          }
+        };
+        loadFonts();
+      }, []);
+      if (!fontLoaded) {
+        return null;
       }
-    }, [fontsLoaded]);
-  
-    if (!fontsLoaded) {
-      return null;
-    }
-
-    // useEffect(() => {
-    //     const loadFonts = async () => {
-    //       try {
-    //         await Font.loadAsync({
-    //           'icomoon': require("./assets/fonts/icomoon.ttf"),
-    //         });
-    //         setFontLoaded(true);
-    //       } catch (error) {
-    //         return null
-    //       }
-    //     };
-    //     loadFonts();
-    //   }, []);
-    //   if (!fontLoaded) {
-    //     return null;
-    //   }
   return (
-    <View  onLayout={onLayoutRootView} style={{flex: 1, alignItems: "center", justifyContent: 'center'}}>
+    <View style={{flex: 1, alignItems: "center", justifyContent: 'center'}}>
         <Modal
         animationType="fade"
         transparent={true}
